@@ -2,11 +2,11 @@
 
 Es una App de tipo Dynamc Web Project en Java Servlet y patrón DAO/MVC
 
-La BBDD se llaman "walletmod5", se crean 2 usuario con las credenciales:
+La BBDD se llaman "walletmod5", se acompaña script para generar la base de datos y poblar las tablas generadas. 
 
-Se acompaña script para generar la base de datos y poblar las tablas generadas. La clase de conexión mysql tiene registrado como usuario: root y contraseña: 150919
+La clase de conexión mysql tiene registrado como usuario: root y contraseña: 150919
 
-Las credaneciales de los usuarios registrados en la base de datos son:
+Las credenciales de los usuarios registrados en la base de datos son:
 
 username: marcelo, password: 123
 
