@@ -9,6 +9,7 @@ Se acompaña script para generar la base de datos y poblar las tablas generadas.
 Las credaneciales de los usuarios registrados en la base de datos son:
 
 username: marcelo, password: 123
+
 username: braulio, password: 123
 
 Los usuarios inician con un saldo igual a 0 (cero).
