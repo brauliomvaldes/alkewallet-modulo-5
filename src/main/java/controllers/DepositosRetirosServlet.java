@@ -40,12 +40,18 @@ public class DepositosRetirosServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-			HttpSession session = request.getSession(true);
+			// recupera la session, si no existe la crea 
+			HttpSession session = request.getSession(false);
+			// si la session no existe redirige al index para el login
+			if(session == null) {
+				response.sendRedirect("index.jsp");
+			}
+			// recupera variables de session a emplear como información en la operación 
 			String nombre = (String)session.getAttribute("nombre");
 			BigDecimal saldo = (BigDecimal)session.getAttribute("saldo");
 			String mensaje = (String)session.getAttribute("mensaje");
 			int idUsuarioWeb = (Integer)session.getAttribute("idusuario"); // para validar mismo usuario login y formulario
-			
+			// genera vista para realizar operaciones de depósito o retiro de dinero
 			String html = "";
 			html += "<!DOCTYPE html>";
 			html += "<html>";

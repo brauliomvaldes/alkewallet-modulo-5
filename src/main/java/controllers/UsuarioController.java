@@ -35,16 +35,19 @@ public class UsuarioController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// servlet para autenticar el usuario
+		// se recuperan las credenciales entregadas
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		HttpSession session = request.getSession(true);
+		// recupera usuario, si no existe el resultado es null
 		Usuario usuario = UserDAO.validaUsuario(username, password, session);
+		// consulta si el usuario es válido
 		if (usuario != null) { // usuario validado
-			//response.sendRedirect("DepositosRetiros.jsp");
+			// redirige a vista/servlet operaciones
 			response.sendRedirect("DepositosRetirosServlet");
-			//RequestDispatcher dispatcher = request.getRequestDispatcher("DepositosRetirosServlet");
-			//dispatcher.forward(request, response);
 		}
+		// si el usuario no existe se crea vista con el mensaje
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().println("<html><body>");
 		response.getWriter().println("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>");

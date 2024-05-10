@@ -32,11 +32,19 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(true);
-		if(session.getAttribute("idusuario") != null) {
-			session.removeAttribute("idusuario");
+		// proceso de logout
+		// 
+		HttpSession session = request.getSession(false);
+		// si la session existe
+		if(session != null) {
+			// si la variable que almacena el id del usuario existe, la remueve
+			if(session.getAttribute("idusuario") != null) {
+				session.removeAttribute("idusuario");
+			}
 		}
+		// desconecta 
 		UserDAO.usuarioLogout();  // desconecta la BD
+		// se redirige a index para el login
 		response.sendRedirect("index.jsp");
 	}
 
