@@ -1,6 +1,8 @@
 # alkewallet-modulo-5
 
-Es una App de tipo Dynamc Web Project en Java Servlet y patrón DAO/MVC
+La evaluación se solicita que el usuario pueda operar con su saldo, realizar operaciones de retiro y depósito de dinero. En base a esta información y en el entendido que se pretende evaluar poner en práctica los contenidos comprendido en el módulo 5, esto es la creación de una aplicación del tipo Web Dynamix Project y que opere con una base de datos mediante la implementación del patrón DAO/MVC, es que decidí crear sólo dos entidades, la clase AuthUsuario para almecenar usuario autenticados y otra clase para operar con el usuario, la clase Usuario, con 3 atributos: id, nombre y saldo, parámetros que entiendo son los mínimos necesarios para probar las funcionalidades requeridas.
+
+Se implementan dos clases para la gestión DAO, con métodos necesarios para realizar las funcionalidades necesarias para operar con la BBDD.
 
 La BBDD se llama "walletmod5", se acompaña script para generar la base de datos y poblar las tablas generadas. 
 
@@ -28,5 +30,5 @@ Se puede hacer logout para operar con otro usuario
 
 Si se abre la app en otro navegador es posible operar simultanemente con ambos o el mismo usuario pero el saldo no se verá reflejado hasta que se realice una operación que refresque la vista inactiva.
 
-No permite utilizar el cache del navegador cuando se retrocede en el navegador, se intentar hacerlo se redirige al index para login.
+No permite utilizar el cache del navegador, de intentar hacerlo se redirige al index para realizar login.
 

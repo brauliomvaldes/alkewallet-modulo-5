@@ -18,27 +18,22 @@ import java.math.BigDecimal;
 public class DepositosRetirosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public DepositosRetirosServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 	}
-	
+	 /**
+	 * Método GET que generar vista JSP para reliazar operaciones de retiro o deposito de dinero
+	 *
+	 * @param  request, response  
+	 * @return retorna valor booleano por el éxito de la operación
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
 			// recupera la session, si no existe la crea 
 			HttpSession session = request.getSession(false);
@@ -102,5 +97,4 @@ public class DepositosRetirosServlet extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		}
 	}
-
 }

@@ -9,8 +9,19 @@ import coneccionDB.Coneccion;
 import jakarta.servlet.http.HttpSession;
 import models.Usuario;
 
+/*
+ * Clase que implementa el patrón DAO para operar con la BBDD
+ * 
+ */
+
 public class UserDAO {
 
+	 /**
+	 * Método para recuperar un usuario autenticado
+	 *
+	 * @param  username, contraseña, conección a la BBDD
+	 * @return usuario autenticado o usuario null
+	 */
 	public static Usuario validaUsuario(String username, String password, HttpSession session) {
 		try {
 			// llama a instancia BBDD
@@ -46,7 +57,12 @@ public class UserDAO {
 		return null;
 	}
 
-	// método para recuperar un usuario según el id
+	/**
+	 * Método para recuperar un usuario según su id
+	 *
+	 * @param  id del usuario, conección a la BBDD
+	 * @return usuario
+	 */
 	private static Usuario recuperaUsuario(int idUsuario, Coneccion conn) {
 		try {
 			// pepara string de query para traer datos relevantes
@@ -73,8 +89,12 @@ public class UserDAO {
 		return null;
 	}
 
-	// método para depositar dinero a la cuenta
-	// retorna valor booleano por el éxito de la operación
+	/**
+	 * Método para depositar dinero a la cuenta
+	 *
+	 * @param  id usuario, monto operación, session del usuario  
+	 * @return retorna valor booleano por el éxito de la operación
+	 */
 	public static boolean depositar(int idUsuario, double amount, HttpSession session) {
 		try {
 			Coneccion conn = Coneccion.getInstance();// establece una coneción a la DB
@@ -110,8 +130,12 @@ public class UserDAO {
 		return false;
 	}
 
-	// método para retirar dinero de la cuenta
-	// retorna valor booleano por el éxito de la operación
+	/**
+	 * Método para retirar dinero a la cuenta, se valida que el usuario tenga saldo suficiente
+	 *
+	 * @param  id usuario, monto operación, session del usuario  
+	 * @return retorna valor booleano por el éxito de la operación
+	 */
 	public static boolean retirar(int idUsuario, double amount, HttpSession session) {
 		try {
 			Coneccion conn = Coneccion.getInstance();// establece una coneción a la DB

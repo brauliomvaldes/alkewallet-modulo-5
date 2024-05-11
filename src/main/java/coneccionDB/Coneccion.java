@@ -3,6 +3,9 @@ package coneccionDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/**
+ * Clase para conexion a la BBDD, implementa patrón singleton
+ */
 public class Coneccion {
     // declarada static para ser invovada estáticamente
     public static Coneccion instancia;
